@@ -123,7 +123,7 @@ subfolder so yesterday's run is never overwritten.
 
 ```
 output/
-└── 20261019/
+└── 20261019_news/
     ├── daily_20261019_news.json              # the whole run: all 4 posts, EN + ES scripts,
     │                                    #   word counts, format warnings, audio paths
     ├── usa_daily_20261019_news.json          # one standalone JSON per daily post,
