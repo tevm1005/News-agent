@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment (recreate with: python3.12 -m venv .venv && pip install -r requirements.txt)
+.venv/
+venv/
+
+# Generated media and transcripts
+output/
+*.mp3
+*.wav
+*.m4a
+*.mp4
+
+# Local model / HF caches
+.cache/

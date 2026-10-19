@@ -1,0 +1,37 @@
+# 100% local & free AI News Agent - no paid APIs, no cloud keys
+#
+# Recommended interpreter: Python 3.11 - 3.13 (3.12 is verified working).
+# On Python 3.14+ PyAV has no prebuilt wheel and its source build fails, which
+# disables --media transcription.
+#
+# Install:
+#   python3.12 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+
+# --- local speech-to-text ---
+faster-whisper>=1.0.0
+
+# --- PyAV is faster-whisper's audio decoder, and the version matters ---
+# faster-whisper 1.2.x calls av.open(..., metadata_errors="ignore"), but PyAV 19
+# removed that keyword. Without this pin, transcription crashes with:
+#   TypeError: open() got an unexpected keyword argument 'metadata_errors'
+# Do not let pip resolve av==19.x for now.
+av>=14.0,<19
+
+# --- scraped article text extraction (local, no API) ---
+trafilatura>=1.8.0
+
+# --- free neural text-to-speech, no API key ---
+edge-tts>=6.1.9
+
+# --- free web search, no API key (both names kept for compatibility) ---
+duckduckgo-search>=6.1.0
+ddgs>=9.0.0
+
+# --- local LLM runtime client (Ollama server installed separately) ---
+ollama>=0.3.0
+
+# --- HTTP client used for the Jina AI Reader fallback ---
+requests>=2.31.0
+
+# --- RSS fallback when web search is rate-limited ---
+feedparser>=6.0.11
