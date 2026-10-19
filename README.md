@@ -124,16 +124,16 @@ subfolder so yesterday's run is never overwritten.
 ```
 output/
 └── 20261019/
-    ├── daily_20261019.json              # the whole run: all 4 posts, EN + ES scripts,
+    ├── daily_20261019_news.json              # the whole run: all 4 posts, EN + ES scripts,
     │                                    #   word counts, format warnings, audio paths
-    ├── usa_daily_20261019.json          # one standalone JSON per daily post,
-    ├── usa_daily_20261019_en.mp3        #   ready to drop into a scheduler
-    ├── usa_daily_20261019_es.mp3        #   (ES file only with --es-audio)
-    ├── china_daily_20261019.json
-    ├── china_daily_20261019_en.mp3
-    ├── china_daily_20261019_es.mp3
-    ├── venezuela_daily_20261019.{json,mp3}
-    └── ai_daily_20261019.{json,mp3}
+    ├── usa_daily_20261019_news.json          # one standalone JSON per daily post,
+    ├── usa_daily_20261019_news_en.mp3        #   ready to drop into a scheduler
+    ├── usa_daily_20261019_news_es.mp3        #   (ES file only with --es-audio)
+    ├── china_daily_20261019_news.json
+    ├── china_daily_20261019_news_en.mp3
+    ├── china_daily_20261019_news_es.mp3
+    ├── venezuela_daily_20261019_news.{json,mp3}
+    └── ai_daily_20261019_news.{json,mp3}
 ```
 
 Each `*_daily_*.json` looks like this:
@@ -149,8 +149,8 @@ Each `*_daily_*.json` looks like this:
       "english": "🇺🇸 ENGLISH VERSION: ...", "spanish": "🇪🇸 VERSIÓN EN ESPAÑOL: ...",
       "complete": true, "format_warnings": [] }
   ],
-  "audio_en": "output/usa_daily_20261019_en.mp3",
-  "audio_es": "output/usa_daily_20261019_es.mp3"
+  "audio_en": "output/usa_daily_20261019_news_en.mp3",
+  "audio_es": "output/usa_daily_20261019_news_es.mp3"
 }
 ```
 

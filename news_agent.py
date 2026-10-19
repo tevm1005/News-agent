@@ -1829,7 +1829,7 @@ def build_post(
     The voiceover concatenates every story script in the post, so a 5-story
     post is a single MP3 per language rather than 5 separate files.
     """
-    post_id = f"{category.lower()}_daily_{date_str}"
+    post_id = f"{category.lower()}_daily_{date_str}_news"
     post: dict[str, Any] = {
         "post_id": post_id,
         "category": category,
@@ -2042,7 +2042,7 @@ def write_report(report: dict[str, Any], output_dir: Path, json_path: Path | Non
     output_dir.mkdir(parents=True, exist_ok=True)
     if json_path is None:
         stamp = report.get("date") or datetime.now().strftime("%Y%m%d")
-        json_path = output_dir / f"daily_{stamp}.json"
+        json_path = output_dir / f"daily_{stamp}_news.json"
     json_path.parent.mkdir(parents=True, exist_ok=True)
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     log.info("saved daily report -> %s", json_path)
