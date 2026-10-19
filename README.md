@@ -118,20 +118,22 @@ actionable message and a graceful exit instead of a traceback.
 ## Output
 
 One run produces **4 daily posts** (one per category), 5 stories each = 20 stories,
-plus 8 voiceovers (EN and ES per post).
+plus 8 voiceovers (EN and ES per post). Everything lands in a day-stamped
+subfolder so yesterday's run is never overwritten.
 
 ```
 output/
-├── daily_20261019.json              # the whole run: all 4 posts, EN + ES scripts,
-│                                    #   word counts, format warnings, audio paths
-├── usa_daily_20261019.json          # one standalone JSON per daily post,
-├── usa_daily_20261019_en.mp3        #   ready to drop into a scheduler
-├── usa_daily_20261019_es.mp3        #   (ES file only with --es-audio)
-├── china_daily_20261019.json
-├── china_daily_20261019_en.mp3
-├── china_daily_20261019_es.mp3
-├── venezuela_daily_20261019.{json,mp3}
-└── ai_daily_20261019.{json,mp3}
+└── 20261019/
+    ├── daily_20261019.json              # the whole run: all 4 posts, EN + ES scripts,
+    │                                    #   word counts, format warnings, audio paths
+    ├── usa_daily_20261019.json          # one standalone JSON per daily post,
+    ├── usa_daily_20261019_en.mp3        #   ready to drop into a scheduler
+    ├── usa_daily_20261019_es.mp3        #   (ES file only with --es-audio)
+    ├── china_daily_20261019.json
+    ├── china_daily_20261019_en.mp3
+    ├── china_daily_20261019_es.mp3
+    ├── venezuela_daily_20261019.{json,mp3}
+    └── ai_daily_20261019.{json,mp3}
 ```
 
 Each `*_daily_*.json` looks like this:

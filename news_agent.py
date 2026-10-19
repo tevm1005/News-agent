@@ -2154,6 +2154,10 @@ def main(argv: list[str] | None = None) -> int:
 
     categories = list(CATEGORIES) if "all" in args.categories else args.categories
     output_dir = Path(args.output_dir).expanduser()
+    # Each run's artifacts live in their own day-stamped subfolder so daily
+    # posts (JSON + MP3s) never overwrite the previous day's.
+    run_date = datetime.now().strftime("%Y%m%d")
+    output_dir = output_dir / run_date
 
     log.info("=== %s: 100%% local AI news agent ===", APP_NAME)
 
